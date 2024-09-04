@@ -6,7 +6,6 @@ get_template_part('template-parts/feature-showcase');
 <div class="archive-container">
     <header class="archive-header">
         <?php
-        // Display the title based on the type of archive page
         if (is_category()) {
             single_cat_title('<h1 class="archive-title">', '</h1>');
         } elseif (is_tag()) {
@@ -14,7 +13,7 @@ get_template_part('template-parts/feature-showcase');
         } elseif (is_author()) {
             the_post();
             echo '<h1 class="archive-title">Posts by ' . get_the_author() . '</h1>';
-            rewind_posts(); // Reset the query to continue with the loop
+            rewind_posts(); 
         } elseif (is_day()) {
             echo '<h1 class="archive-title">Posts from ' . get_the_date('F j, Y') . '</h1>';
         } elseif (is_month()) {
@@ -24,7 +23,6 @@ get_template_part('template-parts/feature-showcase');
         } elseif (is_post_type_archive()) {
             post_type_archive_title('<h1 class="archive-title">', '</h1>');
         } elseif (is_tax()) {
-            // Custom taxonomy archives
             $taxonomy = get_queried_object();
             echo '<h1 class="archive-title">Posts in ' . $taxonomy->name . '</h1>';
         } else {
@@ -32,68 +30,58 @@ get_template_part('template-parts/feature-showcase');
         }
         ?>
         <hr class="section-divider">
-    </header><!-- .archive-header -->
+    </header>
 
     <div class="posts-grid">
         <?php
-        // Set up the query for posts with featured images
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        // Pagination
+        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
+        // Query arguments based on archive type
         $args = array(
-            'posts_per_page' => 6, // Number of posts per page
+            'posts_per_page' => 6,
             'paged' => $paged,
-            'meta_key' => '_thumbnail_id', // Ensures only posts with featured images are included
+            'meta_key' => '_thumbnail_id'
         );
 
-        // Adjust query arguments based on archive type
         if (is_category()) {
-            $args['cat'] = get_queried_object_id(); //get id current viewed category
+            $args['cat'] = get_queried_object_id();
         } elseif (is_tag()) {
             $args['tag_id'] = get_queried_object_id();
         } elseif (is_author()) {
             $args['author'] = get_queried_object_id();
         } elseif (is_day()) {
-            $args['date_query'] = array(
-                array(
-                    'year'  => get_the_date('Y'),
-                    'month' => get_the_date('m'),
-                    'day'   => get_the_date('d'),
-                ),
-            );
+            $args['date_query'] = array(array(
+                'year'  => get_the_date('Y'),
+                'month' => get_the_date('m'),
+                'day'   => get_the_date('d'),
+            ));
         } elseif (is_month()) {
-            $args['date_query'] = array(
-                array(
-                    'year'  => get_the_date('Y'),
-                    'month' => get_the_date('m'),
-                ),
-            );
+            $args['date_query'] = array(array(
+                'year'  => get_the_date('Y'),
+                'month' => get_the_date('m'),
+            ));
         } elseif (is_year()) {
-            $args['date_query'] = array(
-                array(
-                    'year'  => get_the_date('Y'),
-                ),
-            );
+            $args['date_query'] = array(array(
+                'year'  => get_the_date('Y'),
+            ));
         } elseif (is_tax()) {
             $taxonomy = get_queried_object();
-            $args['tax_query'] = array(
-                array(
-                    'taxonomy' => $taxonomy->taxonomy,
-                    'field'    => 'term_id',
-                    'terms'    => $taxonomy->term_id,
-                ),
-            );
+            $args['tax_query'] = array(array(
+                'taxonomy' => $taxonomy->taxonomy,
+                'field'    => 'term_id',
+                'terms'    => $taxonomy->term_id,
+            ));
         }
 
         $the_query = new WP_Query($args);
 
-        // Loop through the posts and display featured images with other details
-        if ($the_query->have_posts()):
-            while ($the_query->have_posts()):
-                $the_query->the_post();
-                ?>
+        if ($the_query->have_posts()) :
+            while ($the_query->have_posts()) : $the_query->the_post();
+        ?>
                 <div class="posts-grid-item">
                     <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail('medium'); // Adjust size as needed ?>
+                        <?php the_post_thumbnail('medium'); ?>
                     </a>
                     <h2 class="post-archive-title">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -109,29 +97,28 @@ get_template_part('template-parts/feature-showcase');
                     </div>
                     <a class="read-more-button" href="<?php the_permalink(); ?>">Read More</a>
                 </div>
-                <?php
+        <?php
             endwhile;
-        else:
+        else :
             echo '<p>No posts found.</p>';
         endif;
 
-        // Reset Post Data
         wp_reset_postdata();
         ?>
-    </div><!-- .posts-grid -->
 
-    <!-- Custom Pagination -->
+    </div>
+
     <div class="pagination">
         <?php
         echo paginate_links(array(
-            'total' => $the_query->max_num_pages,
+            'total'   => $the_query->max_num_pages,
             'current' => $paged,
-            'format' => '?paged=%#%',
+            'format'  => '?paged=%#%',
             'prev_text' => __('<i class="fas fa-chevron-left"></i>'),
             'next_text' => __('<i class="fas fa-chevron-right"></i>'),
         ));
         ?>
-    </div><!-- .pagination -->
-</div><!-- .archive-container -->
+    </div>
+</div>
 
 <?php get_template_part('template-parts/footer'); ?>

@@ -10,8 +10,6 @@ get_template_part('Template-parts/header');
     <section class="search-content">
         <?php
         $search_query = get_search_query();
-
-        // Query for posts and pages
         $args = array(
             's' => $search_query,
             'post_type' => array('post', 'page'),

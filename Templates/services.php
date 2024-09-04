@@ -11,10 +11,9 @@ get_template_part('Template-parts/service-highlights');
 
     <section class="services-content">
         <?php
-        // Query for services posts or custom post types
         $args = array(
-            'post_type' => 'services', // Change this if using a different post type
-            'posts_per_page' => -1 // Show all services
+            'post_type' => 'services', 
+            'posts_per_page' => -1
         );
 
         $services_query = new WP_Query($args);

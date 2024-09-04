@@ -1,4 +1,4 @@
-<!-- Top Footer -->
+
 <footer class="main-footer">
     <hr class="footer-top-line">
     <div class="footer-wrapper">
@@ -23,19 +23,16 @@
     </div>
 </footer>
 
-<!-- Footer Divider -->
-<hr class="footer-bottom-line">
-
-<!-- Bottom Footer -->
-<footer class="secondary-footer">
-    <div class="footer-container">
-        <p class="footer-text">
-            &copy; <?php echo date('Y'); ?> D'SIGNfly | Created by 
-            <span class="designer-name"><?php echo wp_get_theme()->get('Author'); ?></span>
-        </p>
-    </div>
+        <hr class="footer-bottom-line">
+              <footer class="secondary-footer">
+                 <div class="footer-container">
+                     <p class="footer-text">
+                         &copy; <?php echo date('Y'); ?> D'SIGNfly | Created by 
+                        <span class="designer-name"><?php echo wp_get_theme()->get('Author'); ?></span>
+                    </p>
+                 </div>
     
-    <?php wp_footer(); ?>
-</footer>
+                    <?php wp_footer(); ?>
+               </footer>
 </body>
 </html>

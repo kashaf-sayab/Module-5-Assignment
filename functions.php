@@ -93,15 +93,13 @@ class Featured_Images_Widget extends WP_Widget
 		);
 	}
 
-	// Widget front-end display
 	public function widget($args, $instance)
 	{
 		echo $args['before_widget'];
 
-		// Query for recent posts with featured images
 		$query_args = array(
-			'posts_per_page' => 8, // Number of posts to display
-			'meta_key' => '_thumbnail_id', // Ensure only posts with featured images are included
+			'posts_per_page' => 8, 
+			'meta_key' => '_thumbnail_id', 
 		);
 		$query = new WP_Query($query_args);
 
@@ -112,7 +110,7 @@ class Featured_Images_Widget extends WP_Widget
 				?>
 				<li class="featured-image-item">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail('small'); // Adjust size as needed ?>
+						<?php the_post_thumbnail('small'); ?>
 					</a>
 				</li>
 				<?php
@@ -122,19 +120,38 @@ class Featured_Images_Widget extends WP_Widget
 			echo '<p>' . __('No featured images found.', 'wp-blog-theme') . '</p>';
 		}
 
-		// Restore original Post Data
 		wp_reset_postdata();
 
 		echo $args['after_widget'];
 	}
 
 
-	// Update widget settings
 	public function update($new_instance, $old_instance)
 	{
-		// Update widget settings if needed
 		return $new_instance;
 	}
 }
-// Include the portfolio shortcode file
 require get_template_directory(). '/Template-parts/portfolio_showcase.php';
+// for comment
+function custom_comment_callback($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment; ?>
+
+    <li <?php comment_class('comment-item'); ?>>
+        <div class="comment-body">
+            <div class="comment-meta">
+                <span class="comment-icon">&#x1F5E8;</span>
+                <span class="comment-author"><?php comment_author(); ?></span>
+                <span class="comment-date">said on <?php comment_date(); ?> at <?php comment_time(); ?></span>
+            </div>
+            <div class="comment-content">
+                <?php comment_text(); ?>
+            </div>
+            <div class="comment-reply">
+                <?php comment_reply_link(array_merge($args, array('reply_text' => '<i class="fas fa-reply"></i> Reply'))); ?>
+            </div>
+        </div>
+        <hr class="comment-divider">
+    </li>
+<?php
+}
+
