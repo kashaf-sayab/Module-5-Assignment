@@ -1,0 +1,1152 @@
+/* Theme Name: Blog Theme
+   Theme URI: http://blogtheme.com
+   Author: kashaf
+   Author URI: http://kashaf.com
+   Description: A custom theme with a header and footer.
+   Version: 1.0
+   License: GPL2
+   License URI: http://www.gnu.org/licenses/gpl-2.0.html
+   Text Domain: blog-theme
+   Tags: Blog,WordPress Theme,custom blog theme
+*/
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Header Styling */
+header {
+    background: #ffffff;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+.header-logo {
+    margin-left: 150px;
+}
+
+.header-logo img {
+    max-height: 50px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin-right: 8px;
+}
+
+.search-bar {
+    margin-left: 30px;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="search"] {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #202020;
+    border-radius: 10px ;
+}
+
+.search-bar button {
+    padding: 5px;
+    background-color: #131111;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.search-bar button i {
+    font-size: 16px;
+}
+
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-nav ul li {
+    margin: 0 15px;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    display: block;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+}
+
+.header-nav ul li a:hover,
+.header-nav ul li.current-menu-item a {
+    background-color: red;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .search-bar {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        
+    }
+    .header-nav {
+        width: 100%;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .header-nav ul li {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Upper Footer Styling */
+.main-footer {
+    background: #ffffff; 
+    color: #000000;
+    padding: 20px 0; 
+    text-align: left; 
+    width: 100%; 
+}
+
+.footer-top-line,
+.footer-bottom-line {
+    border: none;
+    border-top: 1px solid grey; 
+    width: 80%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+}
+
+.footer-top-line {
+    margin-bottom: 50px; 
+}
+
+.footer-bottom-line {
+    margin-top: 50px; 
+    margin-bottom: 10px; 
+}
+
+/* Footer Container Styling */
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px; 
+    flex-wrap: wrap;
+}
+
+/* Footer Block Styling */
+.footer-block {
+    width: 50%;
+    margin: 0 10px; 
+    margin-left: 150px;
+    flex: 1;
+}
+
+.footer-block h2 {
+    margin-bottom: 15px;
+    color: #7a7676; 
+    font-weight: normal; 
+}
+
+.footer-block p {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: grey; 
+}
+
+.read-more-link {
+    display: inline-block; 
+    color: #e73e2b; 
+    text-decoration: none; 
+}
+
+.read-more-link:hover {
+    text-decoration: underline; 
+}
+
+.email-link {
+    color: #e73e2b; 
+}
+
+/* Social Icons Styling */
+.social-links {
+    display: flex;
+    gap: 10px; 
+    margin-top: 10px; 
+}
+
+.social-item {
+    font-size: 18px; 
+    text-decoration: none; 
+    padding: 10px;
+    border-radius: 2px; 
+    color: white; 
+    transition: opacity 0.3s; 
+}
+
+/* Social icon colors */
+.fb-icon { background-color: #4267B2; } 
+.tw-icon { background-color: #1DA1F2; } 
+.pin-icon { background-color: #E4405F; } 
+.gp-icon { background-color: #DB4437; } 
+.in-icon { background-color: #0077B5; } 
+
+/* Hover effect for social icons */
+.social-item:hover {
+    opacity: 0.8; /
+}
+
+/* Lower Footer Styling */
+.secondary-footer {
+    text-align: center;
+    padding: 10px 0; 
+    background-color: #faf9f9; 
+    color: #746f6f; 
+    font-size: 14px; 
+}
+
+.footer-text {
+    margin: 0; 
+}
+
+.designer-name {
+    color: #e73e2b; 
+    font-weight: bold; 
+}
+
+/* General Footer Styling */
+.site-footer {
+    background-color: #f8f8f8; 
+    padding: 20px 0; 
+    text-align: center; 
+    border-top: 1px solid #e5e5e5; 
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    flex-direction: column;   
+}
+
+.footer-copyright {
+    color: #333; 
+    font-size: 14px; 
+    font-weight: normal; 
+    margin: 0; 
+}
+
+.footer-copyright span {
+    font-weight: bold; 
+    color: #e73e2b; 
+}
+/* Slider Image Section */
+.slider {
+    position: relative;
+    width: auto;
+    overflow: hidden; 
+}
+
+.slider-image-content {
+    position: relative;
+    width: 100%;
+    height: 600px; 
+}
+
+.slider-image {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+
+/* Text Overlay Styling */
+.image-text {
+    position: absolute;
+    bottom: 50px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    color: #fff;
+    text-align: center;
+    padding: 20px; 
+}
+
+.image-text h1 {
+    font-size: 60px; 
+    margin-bottom: 10px;
+    font-weight: bold; 
+}
+
+.image-text p {
+    font-size: 15px;
+    font-weight: normal; 
+    margin: 0; 
+}
+
+/* Styling for Services Highlight */
+.service-highlights {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #ebe3e3 ;
+    padding: 20px 270px; 
+    
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 30%; 
+    margin: 0 20px; 
+}
+
+.service-icon {
+    width: 60px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+.service-icon i {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.service-details h2 {
+    margin: 0;
+    padding-bottom: 5px;
+    font-size: 18px;
+    color: #e73e2b;
+}
+
+.service-details p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: lighter;
+}
+/* Portfolio Page Styling */
+.portfolio-wrapper {
+    text-align: center;
+    margin: 0 80px; 
+}
+
+.portfolio-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+    margin-top: 40px;
+}
+
+.portfolio-header h2 {
+    font-weight: normal;
+    font-size: 34px;
+    color: #7a7676;
+    margin-bottom: 10px;
+}
+
+.portfolio-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.portfolio-nav .btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: black;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-nav .btn.active,
+.portfolio-nav .btn:focus,
+.portfolio-nav .btn:active {
+    background-color: rgb(231, 62, 43); /* Red background when clicked or active */
+    outline: none; /* Remove default outline */
+}
+
+.portfolio-divider {
+    border: none;
+    height: 1px;
+    background-color: #9b9292;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    align-items: center;
+
+}
+
+.portfolio-card {
+    position: relative;
+    text-align: center;
+    color: #7a7676;
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover; 
+    
+}
+
+.portfolio-pagination {
+    margin-top: 20px;
+}
+
+.portfolio-pagination .page-numbers {
+    margin: 0 5px;
+    color: #000;
+}
+
+.portfolio-pagination .page-numbers.current {
+    background-color: rgb(231, 62, 43);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.portfolio-pagination .page-numbers:hover {
+    background-color: black;
+    color: #fff;
+}
+/* Blog Section Layout */
+.blog-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds spacing between content and sidebar */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Content Area */
+.blog-container {
+    flex: 3; /* Takes up 70% of the width */
+    min-width: 0; /* Ensures the content area shrinks as needed */
+    margin-top: 50px;
+}
+
+/* Sidebar Area */
+.sidebar-area {
+    flex: 1; /* Takes up 30% of the width */
+    margin-left: 20px; /* Adds space between content and sidebar */
+}
+
+/* Heading Styling */
+.blog-header h2 {
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 35px;
+    color: #746f6f;
+}
+
+/* Blog Post Container */
+.blog-post {
+    margin-bottom: 30px;
+}
+
+/* Blog Post Header */
+.blog-post-header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Date Styling */
+.post-date a {
+    font-size: 18px;
+    padding-left: 5px;
+    text-decoration: none;
+    color: #ddd;
+}
+
+/* Vertical Line Styling */
+.post-separator {
+    width: 1px;
+    background-color: #fff;
+    height: 30px;
+    margin: 0 20px;
+}
+
+/* Post Title */
+.post-title {
+    font-size: 20px;
+}
+
+.post-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Post Details */
+.post-details {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2px;
+    color: grey;
+    font-weight: normal;
+}
+
+/* Blog Meta */
+.post-meta {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.meta-info {
+    display: flex;
+    font-size: 14px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.meta-info p {
+    margin: 0;
+    color: #333;
+}
+
+.meta-info p a {
+    color: #333;
+    text-decoration: none;
+}
+
+.meta-info p a:hover {
+    text-decoration: underline;
+}
+
+/* Added space between date and comments */
+.meta-info .comment-count {
+    margin-left: 60px;
+}
+
+/* Post Thumbnail */
+.post-thumbnail img {
+    width: 180px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+/* Meta Separator */
+.meta-separator {
+    margin-top: -15px;
+}
+
+.meta-info .author-link {
+    color: #e73e2b;
+}
+
+/* Comment Count Styling */
+.comment-count {
+    color: #e73e2b;
+    display: inline-block;
+}
+
+.blog-vertical-line {
+    width: 1px;
+    background-color: #fff;
+    height: 30px;
+    margin: 0 10px;
+}
+
+/* Divider Styling */
+.post-divider {
+    margin: 5px 0;
+    height: 1px;
+    border: none;
+    border-top: 1px solid rgb(133, 129, 129);
+}
+
+/* Post Excerpt */
+.post-excerpt-container {
+    margin-top: 50px;
+    text-align: left; /* Ensures left alignment */
+}
+
+.post-excerpt {
+    margin: 0; /* Removes any default margin */
+    padding: 0; /* Removes any default padding */
+}
+
+/* Read More Link */
+.more-link {
+    color: #e73e2b;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.more-link:hover {
+    text-decoration: underline;
+}
+
+/* Pagination Links */
+.pagination-links {
+    margin-top: 20px;
+}
+
+.pagination-links .page-numbers {
+    margin: 0 5px;
+    color: #000;
+}
+
+.pagination-links .page-numbers.current {
+    background-color: rgb(231, 62, 43);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.pagination-links .page-numbers:hover {
+    background-color: black;
+    color: #fff;
+}
+
+/* Single post styles */
+.single-post-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds spacing between content and sidebar */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-left: 150px;
+}
+
+.content-area.single-post-content {
+    flex: 1 1 70%; /* Takes up 70% of the width */
+    min-width: 0; /* Ensures the content area shrinks as needed */
+}
+.post-content-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #333;
+}
+
+
+.single-post-meta {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+/* Author Name */
+.single-post-meta .author {
+    color: #e73e2b; 
+    margin-left: 5px; 
+    margin-right: 5px; 
+    text-decoration: none;
+}
+
+/* Date */
+.single-post-meta .date {
+    margin-left: 5px;
+    text-decoration: none; 
+    color: #000;
+}
+
+/* Comments Count */
+.single-post-meta .comments {
+    color: #e73e2b;
+    margin-left: 120px; 
+    margin-right: 3px;
+}
+
+/* Post Content */
+.single-post-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: normal; 
+    margin-bottom: 10px;
+}
+/* Tags Section */
+.post-tags {
+    margin-top: 50px; 
+    display: flex;
+    align-items: center; 
+}
+.tags-heading {
+    font-size: 1.25rem; 
+    font-weight: normal; 
+    margin-bottom: 0; 
+    margin-right: 10px; 
+}
+
+.tag a {
+    color: #e73e2b; 
+    margin-right: 5px; 
+    text-decoration: none;
+    margin-top: 0; 
+}
+/* General Styles for Search Results Page */
+.search-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-title {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+}
+
+.search-content {
+    padding: 20px;
+}
+
+.search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.search-result-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.search-result-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-thumbnail a {
+    display: block;
+    overflow: hidden;
+}
+
+.search-thumbnail img {
+    width: 250px;
+    height: 250px;
+    display: block;
+}
+
+.search-details {
+    padding: 15px;
+}
+
+.search-title a {
+    text-decoration: none;
+    color: #cc0b0b;
+    font-size: 1.5em;
+}
+
+.search-title a:hover {
+    text-decoration: underline;
+}
+
+.search-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.search-meta .search-author,
+.search-meta .search-date,
+.search-meta .search-categories {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.search-excerpt {
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #333;
+}
+
+.read-more-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ec0c1f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: #dd0d0d;
+}
+
+.search-pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-pagination .page-numbers {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #c20909;
+    text-decoration: none;
+}
+
+.search-pagination .page-numbers.current {
+    background-color: #c40f18;
+    color: #fff;
+    border-color: #ca1616;
+}
+
+.search-pagination .page-numbers:hover {
+    background-color: #c21010;
+    border-color: #c70a0a;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    padding: 20px;
+}
+.related-categories,
+.related-tags {
+    list-style: none;
+    padding: 0;
+}
+
+.related-categories li,
+.related-tags li {
+    margin-bottom: 10px;
+}
+
+.related-categories a,
+.related-tags a {
+    text-decoration: none;
+    color: #d10e0e;
+    font-size: 1em;
+}
+
+.related-categories a:hover,
+.related-tags a:hover {
+    text-decoration: underline;
+    color: #c70f0f;
+}
+/* Services Page Styles */
+.services-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.services-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.services-content {
+    padding: 0 1rem;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.item-for-service {
+    flex: 1 1 calc(33.333% - 1rem); /* Adjust the percentage based on the number of columns */
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.service-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.detail-for-service {
+    padding: 1rem;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+}
+
+.service-excerpt {
+    margin: 0 0 1rem;
+}
+
+.read-more-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #c91111;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.read-more-button:hover {
+    background: #c50b0b;
+}
+
+.no-services {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* portfolio shortcode */
+.portfolio-showcase {
+    background-color: #fff9f9;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-showcase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.portfolio-title {
+    color: #a19b9b;
+    margin: 0;
+}
+
+.view-all-btn {
+    color: #fff;
+    background-color: #0e0d0d;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-all-btn:hover {
+    background-color: #e91c2a;
+}
+.portfolio-showcase-divider {
+    border: none;
+    border-top: 1px solid #c0b9b9; 
+    width: 80%;
+    margin: 0 auto; 
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 0; 
+    margin: 0 auto; 
+    width: 80%; 
+}
+
+.portfolio-item {
+    background-color: #faf6f6;
+    border-radius: 5px;
+    padding: 10px;; 
+}
+.portfolio-item img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+}
+/* Sidebar Area */
+.sidebar-area {
+    flex: 0 1 30%; /* Takes up 30% of the width */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Widget Styling */
+.widget {
+    margin-bottom: 30px;
+}
+
+.widget-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.widget hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 10px 0;
+}
+
+/* Recent, Related, and Popular Posts List */
+.recent-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-posts-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.recent-post-thumbnail {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.recent-post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.recent-post-info {
+    flex: 1;
+}
+
+.recent-post-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.recent-post-meta {
+    font-size: 14px;
+    color: #666;
+}
+
+.recent-post-meta .author-name {
+    color: red;
+    font-weight: bold;
+}
+
+/* Archive Widget Styling */
+#archives ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#archives ul li {
+    margin-bottom: 10px;
+}
+
+#archives ul li a {
+    color: #857d7d;
+    text-decoration: none;
+}
+
+#archives ul li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Adjust grid layout for featured images */
+.featured-images-widget {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1px; 
+    list-style: none;
+    padding: 0;
+}
+
+.featured-images-widget .featured-image-item a {
+    display: block;
+    width: 100%; 
+    height: 100%; 
+}
+
+.featured-images-widget .featured-image-item img {
+    width: 90%; 
+    max-height: 50px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-area {
+        margin-top: 20px;
+        flex: 1 1 auto;
+    }
+}
